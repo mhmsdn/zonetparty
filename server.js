@@ -14,7 +14,7 @@ const MCP_PATH = "/mcp";
 
 // Load the widget relative to this server.js file
 const widgetHtml = readFileSync(
-  new URL("./frontend/mcp-widget.html", import.meta.url),
+  new URL("./mcp-widget.html", import.meta.url),
   "utf8"
 );
 
