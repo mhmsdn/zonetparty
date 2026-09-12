@@ -1,0 +1,31 @@
+[
+  {
+    "user_id": "demo_ali",
+    "display_name": "Ali",
+    "age": 26,
+    "languages": ["fa", "en"],
+    "interests": ["architecture", "gaming", "movies"],
+    "communication_style": ["direct", "humorous"],
+    "values": ["loyalty", "growth"],
+    "goals": ["friendship", "gaming"],
+    "availability": ["evening", "weekend"],
+    "games": [
+      {"game_id":"valorant","platform":"pc","region":"EU","rank":"Diamond","role":"duelist","voice":true,"style":"competitive","schedule":["evening","weekend"]},
+      {"game_id":"minecraft","platform":"pc","region":"EU","voice":true,"style":"casual","schedule":["weekend"]}
+    ]
+  },
+  {
+    "user_id": "demo_sam",
+    "display_name": "Sam",
+    "age": 25,
+    "languages": ["en"],
+    "interests": ["gaming", "movies", "music"],
+    "communication_style": ["direct", "humorous"],
+    "values": ["loyalty", "growth"],
+    "goals": ["friendship", "gaming"],
+    "availability": ["evening", "weekend"],
+    "games": [
+      {"game_id":"valorant","platform":"pc","region":"EU","rank":"Diamond","role":"controller","voice":true,"style":"competitive","schedule":["evening","weekend"]}
+    ]
+  }
+]

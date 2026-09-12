@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>ZonetParty</title>
+<style>
+body{margin:0;background:#0b0c11;color:#f5f5f7;font:14px system-ui;padding:18px}
+.wrap{max-width:720px;margin:auto}.brand{font-size:20px;font-weight:800;margin-bottom:18px}
+.card{border:1px solid #282b35;background:#11131a;border-radius:18px;padding:16px;margin:10px 0}
+.row{display:flex;justify-content:space-between;gap:12px}.score{font-size:22px;font-weight:850}
+.tag{display:inline-block;border:1px solid #30333e;border-radius:999px;padding:4px 8px;margin:4px 4px 0 0;font-size:11px;color:#c8cbd4}
+button{border:0;border-radius:11px;padding:10px 12px;font-weight:800;cursor:pointer;background:#f4f4f5;color:#090a0e}
+.muted{color:#969aa8}.empty{padding:30px;text-align:center;border:1px dashed #30333e;border-radius:16px}
+</style></head>
+<body><div class="wrap"><div class="brand">ZonetParty</div><div id="root" class="empty">Waiting for a ZonetParty tool result…</div></div>
+<script>
+const root=document.getElementById("root");
+function render(data){
+ const matches=data?.matches||[];
+ if(!matches.length){root.innerHTML='<div class="empty">No matches found yet.</div>';return}
+ root.innerHTML='<div class="muted">'+matches.length+' potential matches</div>'+
+ matches.map(m=>`<div class="card"><div class="row"><div><b>${m.display_name}</b><div class="muted">${m.shared_games?.join(", ")||"ZonetParty"}</div></div><div class="score">${m.compatibility}%</div></div><div>${(m.reasons||[]).map(x=>`<span class="tag">${x}</span>`).join("")}</div></div>`).join("");
+}
+window.addEventListener("message",(event)=>{
+ const msg=event.data;
+ const data=msg?.params?.structuredContent || msg?.structuredContent;
+ if(data) render(data);
+});
+</script></body></html>
